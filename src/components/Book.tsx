@@ -24,6 +24,7 @@ const Book = () => {
   });
 
   const handleSubmit = (e:React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
     const {title, author, price} = formValue;
     setBooks([
       ...books,
@@ -50,11 +51,11 @@ const Book = () => {
       <div className='form-container'>
         <form onSubmit={handleSubmit}>
           <label htmlFor="">Title:</label>
-          <input type='text' name='title' value={formValue.title} onChange={()=>handleChange}/>
+          <input type='text' name='title' value={formValue.title} onChange={handleChange}/>
           <label htmlFor="">Author:</label>
-          <input type='text' name='author' value={formValue.author} onChange={()=>handleChange}/>
+          <input type='text' name='author' value={formValue.author} onChange={handleChange}/>
           <label htmlFor="">Price:</label>
-          <input type='text' name='price' value={formValue.price} onChange={()=>handleChange}/>
+          <input type='text' name='price' value={formValue.price} onChange={handleChange}/>
           <button type='submit'>Add</button>
           {/* <button type='submit'>Update</button> */}
         </form>

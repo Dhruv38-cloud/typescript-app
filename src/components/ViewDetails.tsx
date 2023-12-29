@@ -17,17 +17,13 @@ const ViewDetails = ({books}:Prop) => {
           </tr>
         </thead>
         <tbody>
-          <tr>
-              {books.map((item:{title:string, author:string, price:string}) => (
-                <tr>
-                  <td>{item.title}</td>
-                  <td>{item.author}</td>
-                  <td>{item.price}</td>
-                </tr>
-              ))}
-            <td>
-            </td>
-          </tr>
+          {books.map((item:{title:string, author:string, price:string}) => (
+            <tr>
+              <td>{item.title}</td>
+              <td>{item.author}</td>
+              <td>{item.price}</td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>
